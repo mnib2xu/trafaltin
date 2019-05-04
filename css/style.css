@@ -1433,11 +1433,13 @@ h1, h2, h3, h4, h5,
 .how-it-work-item p {
   color: white; }
 
+
 .person h3 {
   font-size: 18px; }
 
 .person img.headshot {
-  width: 85%;
+  width: 100%;
+  margin: 0px auto;
   /* -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
   /* filter: grayscale(100%); */
 }
