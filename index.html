@@ -40,7 +40,7 @@
     <div class="row align-items-center w-100 mr-0">
 
       <div class="col-10 col-xl-2 site-logo pr-5">
-        <h1 class="mb-0"><a href="index.html" class="text-white h2 ml-4 mb-0">Trafaltin</a></h1>
+        <h1 class="mb-0"><a href="index.html" class="text-white h2 ml-4 mb-0"><img src="images/optie-59-wit.png" alt="trafaltin-logo" style="height: 38px;"></a></h1>
       </div>
       <div class="col-12 col-md-10 d-none d-xl-block">
         <nav class="site-navigation position-relative mr-4 text-right" role="navigation">
@@ -272,7 +272,7 @@
 
         <div class="col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="100">
           <div class="person pl-4 pr-4">
-            <img src="images/Albert_binnen.jpg" alt="Image" class="img-fluid rounded mb-4 headshot">
+            <img src="images/Albert_binnen_lichter.jpg" alt="Image" class="img-fluid rounded mb-4 headshot">
             <div class="col-12 p-0">
               <h3 class="text-mini-headers">Albert Rengers</h3>
               <p class="mb-2" style="font-size: 0.9em">Albert graduated from Erasmus University of Rotterdam with a
@@ -292,7 +292,7 @@
 
         <div class="col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="200">
           <div class="person pl-4 pr-4">
-            <img src="images/Matthijs_binnen.jpg" alt="Image" class="img-fluid rounded mb-4 headshot">
+            <img src="images/Matthijs_binnen_lichter.jpg" alt="Image" class="img-fluid rounded mb-4 headshot">
             <div class="col-12 p-0">
               <h3 class="text-mini-headers">Matthijs Rameckers</h3>
               <p class="mb-2" style="font-size: 0.9em">Matthijs graduated from Maastricht University with a MSc degree
@@ -309,7 +309,7 @@
 
         <div class="col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="300">
           <div class="person pl-4 pr-4">
-            <img src="images/Bert_binnen.jpg" alt="Image" class="img-fluid rounded mb-4 headshot">
+            <img src="images/Bert_binnen_lichter.jpg" alt="Image" class="img-fluid rounded mb-4 headshot">
             <div class="col-12 p-0">
               <h3 class="text-mini-headers">Bert Hof</h3>
               <p class="mb-2" style="font-size: 0.9em">Bert graduated from University of Groningen with an MSc Degree
@@ -346,29 +346,30 @@
       
       <div class="row">
         <div class="col-md-7">
-          <form action="mailto:info@trafaltin.com?subject=Web Mail" method="POST" enctype="text/plain" class="p-4 bg-white" style="height: 95%">
+          <form id="contact-form" action="mail.php" method="POST" class="p-4 bg-white" style="height: 95%">
 
             <div class="row form-group">
               <div class="col-md-6 mb-3 mb-md-0">
-                <input name="subject" id="subject" placeholder="Subject" class="mb-3 form-control form-height">
 
-                <textarea name="message" id="message" placeholder="Message" cols="30" rows="4" class="form-control mb-5"
+                <!-- Name -->
+                <input name="name" placeholder="Your Name" class="mb-3 form-control form-height" data-required>
+
+                <!-- Message -->
+                <textarea name="message" placeholder="Message" cols="30" rows="4" class="form-control mb-5"
                   style="height: 73%"></textarea>
-
               </div>
 
+              <!-- Email -->
               <div class="col-md-6">
                 <div class="col-md-12 p-0">
-                  <input type="text" id="fname" placeholder="First Name" class="mb-3 form-control form-height">
+                  <input type="email" name="email" placeholder="Email" class="mb-3 form-control form-height" data-required>
                 </div>
 
+                <!-- Phone -->
                 <div class="col-md-12 p-0">
-                  <input type="text" id="lname" placeholder="Last Name" class="mb-3 form-control form-height">
+                  <input type="text" name="phone" placeholder="Phone Number" class="mb-3 form-control form-height">
                 </div>
 
-                <div class="col-md-12 p-0">
-                  <input type="email" id="email" placeholder="Email" class="mb-3 form-control form-height">
-                </div>
 
                 <div class="col-md-12 p-0">
                   <input type="submit" value="Send" class="btn py-2 text-white" style="width: 100%">
