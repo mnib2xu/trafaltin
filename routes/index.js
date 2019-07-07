@@ -11,9 +11,9 @@ let transporter = nodemailer.createTransport({
       user: process.env.SEND_MAIL_ACCOUNT,
       pass: process.env.SEND_MAIL_PASSWORD
   },
-  // tls:{
-  //   rejectUnauthorized: true
-  // }
+  tls: {
+    rejectUnauthorized: false
+  }
 });
 
 /* GET home page. */
