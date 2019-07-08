@@ -4,7 +4,6 @@ const nodemailer = require('nodemailer');
 // const xoauth2 = require('xoauth2')
 require('dotenv').config()
 
-
 let transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
@@ -12,7 +11,7 @@ let transporter = nodemailer.createTransport({
       pass: process.env.SEND_MAIL_PASSWORD
   },
   tls: {
-    rejectUnauthorized: false
+    rejectUnauthorized: true
   }
 });
 
@@ -67,7 +66,7 @@ router.post('/send', (req, res, next) => {
       console.log('Message sent: %s', info.messageId);   
       console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
 
-      res.redirect('/index', {msg:'Email has been sent'});
+      res.redirect('back', {msg:'Email has been sent'});
     })
 })
 
