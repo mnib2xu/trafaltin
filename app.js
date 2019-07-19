@@ -11,6 +11,14 @@ require('dotenv').config()
 
 var app = express();
 
+app.use(function(req,res,next) {
+  if(req.headers["x-forwarded-proto"] == "http") {
+      res.redirect("https://www.trafaltin.com");
+  } else {
+      return next();
+  } 
+});
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
@@ -31,14 +39,6 @@ app.use('/', indexRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
-});
-
-app.use(function(req,res,next) {
-  if(req.headers["x-forwarded-proto"] == "http") {
-      res.redirect("https://www.trafaltin.com" + req.url);
-  } else {
-      return next();
-  } 
 });
 
 // error handler
