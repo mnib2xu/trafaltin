@@ -1,6 +1,8 @@
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
+var fs = require('fs')
+var https = require('https')
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var bodyParser = require('body-parser')
@@ -31,8 +33,12 @@ app.use(function(req, res, next) {
   next(createError(404));
 });
 
-app.get("*", function(request, response){
-  response.redirect("https://" + request.headers.host + request.url);
+app.use(function(req,res,next) {
+  if(req.headers["x-forwarded-proto"] == "http") {
+      res.redirect("https://www.trafaltin.com" + req.url);
+  } else {
+      return next();
+  } 
 });
 
 // error handler
