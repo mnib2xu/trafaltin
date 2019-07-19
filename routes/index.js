@@ -11,7 +11,7 @@ let transporter = nodemailer.createTransport({
       pass: process.env.SEND_MAIL_PASSWORD
   },
   tls: {
-    rejectUnauthorized: true
+    rejectUnauthorized: false
   }
 });
 
@@ -65,8 +65,7 @@ router.post('/send', (req, res, next) => {
       }
       console.log('Message sent: %s', info.messageId);   
       console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
-
-      res.redirect('back', {msg:'Email has been sent'});
+      res.redirect('https://www.trafaltin.com');
     })
 })
 
